@@ -1,0 +1,14 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.tmp
+_*.png
+
+# Unused full-resolution source photos (optimized copies live in images/)
+andrew-ebrahim-zRwXf6PizEo-unsplash.jpg
+eric-brehm-X3a6o6Rs0kw-unsplash.jpg
+kevin-woblick-439WmdedHVA-unsplash.jpg
+linkedin-sales-solutions-Be5aVKFv9ho-unsplash.jpg
+
+# Unused earlier hero video (replaced by the darker one)
+Simple_prompt_quick_paste__Ab.mp4
