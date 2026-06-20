@@ -299,6 +299,62 @@ img,svg{display:block}
 .whl-tcard h3{font-weight:700;font-size:17px;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
 .whl-tcard p{color:#56646f;font-size:14px;line-height:1.55;margin:0}
 
+/* problem layout with reddit phone */
+.whl-pgrid--withphone{display:grid;grid-template-columns:290px 1fr;gap:32px;align-items:stretch;margin-bottom:24px}
+.whl-pright{display:flex;flex-direction:column;gap:24px}
+.whl-pright .whl-pcard{flex:1;margin:0}
+@media(max-width:880px){.whl-pgrid--withphone{grid-template-columns:1fr;gap:28px}.whl-pright{gap:24px}}
+
+/* reddit-style phone mock */
+.whl-redditphone{position:relative;width:290px;max-width:100%;margin:0 auto;background:linear-gradient(180deg,#1a1a1d,#000);border-radius:44px;padding:9px;box-shadow:0 36px 70px -22px rgba(8,14,18,.5),0 16px 36px -12px rgba(8,14,18,.32),inset 0 0 0 1px rgba(255,255,255,.04);justify-self:start}
+.whl-redditphone__screen{background:#0c0c0e;border-radius:36px;overflow:hidden;height:580px;display:flex;flex-direction:column;position:relative;border:1px solid #19191c}
+.whl-rp__statusbar{display:flex;align-items:center;justify-content:space-between;padding:11px 22px 8px;color:#fff;font-size:12px;font-weight:600;background:#0c0c0e;position:relative;z-index:2;font-variant-numeric:tabular-nums}
+.whl-rp__statusbar::before{content:"";position:absolute;left:50%;top:7px;transform:translateX(-50%);width:84px;height:24px;background:#000;border-radius:14px}
+.whl-rp__statusbar > *{position:relative;z-index:2}
+.whl-rp__battery{display:inline-flex;align-items:center;gap:5px;font-size:11px}
+.whl-rp__battery::after{content:"";display:inline-block;width:22px;height:11px;border:1px solid #fff;border-radius:3px;background:linear-gradient(90deg,#a3e635 70%,transparent 70%);background-clip:padding-box;margin-left:2px;position:relative}
+.whl-rp__topbar{display:flex;align-items:center;gap:9px;padding:10px 12px 12px;background:#0c0c0e;border-bottom:1px solid #16161a}
+.whl-rp__icbtn{flex:none;width:30px;height:30px;border-radius:50%;background:#1a1a1d;display:grid;place-items:center;color:#bbb;font-size:15px;font-weight:600}
+.whl-rp__search{flex:1;height:32px;background:#1a1a1d;border-radius:18px;display:flex;align-items:center;gap:7px;padding:0 10px;color:#7a7a7e;font-size:12.5px}
+.whl-rp__rlogo{width:20px;height:20px;background:#ff4500;border-radius:50%;display:inline-grid;place-items:center;color:#fff;font-weight:900;font-size:11px;font-family:Arial,sans-serif;line-height:1;flex:none}
+.whl-rp__feed{flex:1;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 5%,#000 92%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 5%,#000 92%,transparent)}
+.whl-rp__track{display:flex;flex-direction:column;animation:whl-rp-scroll 55s linear infinite;will-change:transform}
+.whl-redditphone:hover .whl-rp__track{animation-play-state:paused}
+@keyframes whl-rp-scroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.whl-rp__post{padding:15px 14px 13px;border-bottom:1px solid #16161a;color:#d7d7d9;background:#0c0c0e}
+.whl-rp__head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.whl-rp__avatar{width:24px;height:24px;border-radius:50%;flex:none;background:linear-gradient(135deg,#ff4500,#ff6a33)}
+.whl-rp__avatar--blue{background:linear-gradient(135deg,#3c9af0,#1e6cd6)}
+.whl-rp__avatar--green{background:linear-gradient(135deg,#3cc97a,#1f8a5b)}
+.whl-rp__avatar--purple{background:linear-gradient(135deg,#9b6cf0,#6c3cd6)}
+.whl-rp__avatar--yellow{background:linear-gradient(135deg,#f0c83c,#d69a1e)}
+.whl-rp__meta{display:flex;flex-direction:column;gap:1px;line-height:1.1}
+.whl-rp__sub{font-size:12px;color:#dfe0e2;font-weight:600}
+.whl-rp__sub small{color:#8a8a8e;font-weight:500;margin-left:4px}
+.whl-rp__user{font-size:11px;color:#8a8a8e;font-weight:500}
+.whl-rp__title{font-size:14px;font-weight:700;line-height:1.28;color:#fff;margin:0 0 9px;letter-spacing:-.005em}
+.whl-rp__tag{display:inline-block;padding:2px 10px;border-radius:11px;font-size:10.5px;font-weight:600;margin-bottom:9px;color:#fff}
+.whl-rp__tag--support{background:#1f8a3a}
+.whl-rp__tag--internet{background:#1f8a3a}
+.whl-rp__tag--mobility{background:#1e6cd6}
+.whl-rp__tag--rant{background:#bd2c1e}
+.whl-rp__body{font-size:12.5px;line-height:1.5;color:#9c9ca0;margin:0 0 11px;display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.whl-rp__actions{display:flex;align-items:center;gap:12px;font-size:11.5px;color:#8a8a8e}
+.whl-rp__actions span{display:inline-flex;align-items:center;gap:4px;background:#1a1a1d;border-radius:18px;padding:5px 9px}
+
+/* provider logo strip */
+.whl-logos{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;overflow:hidden;position:relative}
+.whl-logos__label{text-align:center;color:#7a8893;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 0 22px}
+.whl-logos__track{display:flex;align-items:center;gap:72px;width:max-content;animation:whl-logo-scroll 32s linear infinite;will-change:transform}
+.whl-logos:hover .whl-logos__track{animation-play-state:paused}
+.whl-logos__track img{height:32px;width:auto;flex-shrink:0;opacity:.78;filter:grayscale(.2);transition:opacity .2s var(--ease),filter .2s var(--ease)}
+.whl-logos__track img:hover{opacity:1;filter:grayscale(0)}
+.whl-logos::before,.whl-logos::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.whl-logos::before{left:0;background:linear-gradient(to right,#fff,rgba(255,255,255,0))}
+.whl-logos::after{right:0;background:linear-gradient(to left,#fff,rgba(255,255,255,0))}
+@media (prefers-reduced-motion:reduce){.whl-logos__track{animation:none;justify-content:center;width:100%;flex-wrap:wrap;gap:48px}}
+@keyframes whl-logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 /* founding */
 .whl-found{position:relative;background:var(--paper);border:1px solid var(--line);border-top:1px solid rgba(255,107,74,.4);border-radius:var(--rf);padding:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:32px;box-shadow:var(--sh-1);transition:transform .16s var(--ease),box-shadow .16s var(--ease)}
 .whl-found:hover{transform:translateY(-4px);box-shadow:var(--sh-2)}
@@ -476,6 +532,21 @@ body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;o
   </div>
 </section>
 
+<!-- PROVIDER LOGOS -->
+<section class="whl-logos" aria-label="Internet providers in the Canadian market">
+  <p class="whl-logos__label">Internet providers Canadians are stuck choosing between</p>
+  <div class="whl-logos__track">
+    <img src="Bell_logo.svg.png" alt="Bell">
+    <img src="telus-1.svg" alt="Telus">
+    <img src="Rogers_Communications_(2015).svg" alt="Rogers">
+    <img src="Oxio.svg" alt="Oxio">
+    <img src="Bell_logo.svg.png" alt="" aria-hidden="true">
+    <img src="telus-1.svg" alt="" aria-hidden="true">
+    <img src="Rogers_Communications_(2015).svg" alt="" aria-hidden="true">
+    <img src="Oxio.svg" alt="" aria-hidden="true">
+  </div>
+</section>
+
 <!-- PROBLEM -->
 <section class="whl-section">
   <div class="whl-wrap">
@@ -491,19 +562,141 @@ body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;o
         </div>
       </div>
     </div>
+    <div class="whl-pgrid whl-pgrid--withphone whl-reveal">
+      <!-- Reddit phone with infinitely scrolling complaints -->
+      <div class="whl-redditphone" aria-label="What Canadians are saying about their providers on Reddit">
+        <div class="whl-redditphone__screen">
+          <div class="whl-rp__statusbar">
+            <span class="whl-rp__time">11:50</span>
+            <span class="whl-rp__battery">22</span>
+          </div>
+          <div class="whl-rp__topbar">
+            <div class="whl-rp__icbtn" aria-hidden="true">≡</div>
+            <div class="whl-rp__search"><span class="whl-rp__rlogo">r</span>Search Reddit</div>
+            <div class="whl-rp__icbtn" aria-hidden="true">+</div>
+          </div>
+          <div class="whl-rp__feed">
+            <div class="whl-rp__track">
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 4d ago</small></div><div class="whl-rp__user">WildRosing</div></div></header>
+                <h4 class="whl-rp__title">I swear agents now just hang up on you when they can't figure out what's going on</h4>
+                <span class="whl-rp__tag whl-rp__tag--support">Support</span>
+                <p class="whl-rp__body">I've had a few complicated issues recently, and I am now convinced that some agents who don't want to deal with problems just hang up on you and don't call back. I'm never rude, always patient…</p>
+                <div class="whl-rp__actions"><span>↑ 71 ↓</span><span>💬 24</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--yellow"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 7d ago</small></div><div class="whl-rp__user">Intelligent-J29</div></div></header>
+                <h4 class="whl-rp__title">Telus your straight up thieves.</h4>
+                <span class="whl-rp__tag whl-rp__tag--internet">Internet</span>
+                <p class="whl-rp__body">$367.50 charged for a "Replacement Boost Wi-Fi 6" I never asked for. Tech showed up, swapped it without explaining the cost, then the invoice landed in my inbox days later. Total scam.</p>
+                <div class="whl-rp__actions"><span>↑ 204 ↓</span><span>💬 274</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--blue"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/Bell <small>· 22h ago</small></div><div class="whl-rp__user">zeroprime85</div></div></header>
+                <h4 class="whl-rp__title">Bell Loyalty is a joke</h4>
+                <span class="whl-rp__tag whl-rp__tag--mobility">Mobility</span>
+                <p class="whl-rp__body">Contract expired, called to lower my $75/mo plan. Rep said "that's the best we offer." Loyalty gave the same song and dance but tried to upsell me home internet 3 separate times…</p>
+                <div class="whl-rp__actions"><span>↑ 28 ↓</span><span>💬 34</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--green"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/Wealthsimple <small>· 19h ago</small></div><div class="whl-rp__user">anonymous</div></div></header>
+                <h4 class="whl-rp__title">Frustrating onboarding experience with Telus Wealthsimple promotion</h4>
+                <span class="whl-rp__tag whl-rp__tag--rant">Mobility</span>
+                <p class="whl-rp__body">Placed an online order for 4 lines. BYOD, so I expected a seamless process. Instead, nothing but roadblocks: unresponsive support, broken VIP-offer email, and three days lost so far.</p>
+                <div class="whl-rp__actions"><span>↑ 25 ↓</span><span>💬 14</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--purple"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 2d ago</small></div><div class="whl-rp__user">InkCredibleMom</div></div></header>
+                <h4 class="whl-rp__title">Cancelling without a call</h4>
+                <span class="whl-rp__tag whl-rp__tag--mobility">Mobility</span>
+                <p class="whl-rp__body">I do not want to have a phone call with loyalty! Sent back the device, didn't port my number, have a new provider. Cancel my contract through chat — why is this so complicated?</p>
+                <div class="whl-rp__actions"><span>↑ 4 ↓</span><span>💬 7</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 3d ago</small></div><div class="whl-rp__user">RecordingStill6702</div></div></header>
+                <h4 class="whl-rp__title">Quick to get my money and slow to fix their mistakes</h4>
+                <span class="whl-rp__tag whl-rp__tag--support">Support</span>
+                <p class="whl-rp__body">Switching from Shaw to Telus. Asked for 1.5gb internet only. Got the order summary — TV, internet AND home phone, none of which I agreed to. Support's brave enough to ask if I want to keep it.</p>
+                <div class="whl-rp__actions"><span>↑ 3 ↓</span><span>💬 11</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--green"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/Bell <small>· 1h ago</small></div><div class="whl-rp__user">Key-Lifeguard-5540</div></div></header>
+                <h4 class="whl-rp__title">I'm done with bell, changing providers asap</h4>
+                <span class="whl-rp__tag whl-rp__tag--rant">Rant</span>
+                <p class="whl-rp__body">Connection around Brampton is totally unstable and they keep raising the price of my plan. They only offer 1 plan if you have your own phone — way too much data, way too expensive.</p>
+                <div class="whl-rp__actions"><span>↑ 2 ↓</span><span>💬 2</span><span>Share</span></div>
+              </article>
+              <!-- duplicate set for seamless infinite loop -->
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 4d ago</small></div><div class="whl-rp__user">WildRosing</div></div></header>
+                <h4 class="whl-rp__title">I swear agents now just hang up on you when they can't figure out what's going on</h4>
+                <span class="whl-rp__tag whl-rp__tag--support">Support</span>
+                <p class="whl-rp__body">I've had a few complicated issues recently, and I am now convinced that some agents who don't want to deal with problems just hang up on you and don't call back. I'm never rude, always patient…</p>
+                <div class="whl-rp__actions"><span>↑ 71 ↓</span><span>💬 24</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--yellow"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 7d ago</small></div><div class="whl-rp__user">Intelligent-J29</div></div></header>
+                <h4 class="whl-rp__title">Telus your straight up thieves.</h4>
+                <span class="whl-rp__tag whl-rp__tag--internet">Internet</span>
+                <p class="whl-rp__body">$367.50 charged for a "Replacement Boost Wi-Fi 6" I never asked for. Tech showed up, swapped it without explaining the cost, then the invoice landed in my inbox days later. Total scam.</p>
+                <div class="whl-rp__actions"><span>↑ 204 ↓</span><span>💬 274</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--blue"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/Bell <small>· 22h ago</small></div><div class="whl-rp__user">zeroprime85</div></div></header>
+                <h4 class="whl-rp__title">Bell Loyalty is a joke</h4>
+                <span class="whl-rp__tag whl-rp__tag--mobility">Mobility</span>
+                <p class="whl-rp__body">Contract expired, called to lower my $75/mo plan. Rep said "that's the best we offer." Loyalty gave the same song and dance but tried to upsell me home internet 3 separate times…</p>
+                <div class="whl-rp__actions"><span>↑ 28 ↓</span><span>💬 34</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--green"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/Wealthsimple <small>· 19h ago</small></div><div class="whl-rp__user">anonymous</div></div></header>
+                <h4 class="whl-rp__title">Frustrating onboarding experience with Telus Wealthsimple promotion</h4>
+                <span class="whl-rp__tag whl-rp__tag--rant">Mobility</span>
+                <p class="whl-rp__body">Placed an online order for 4 lines. BYOD, so I expected a seamless process. Instead, nothing but roadblocks: unresponsive support, broken VIP-offer email, and three days lost so far.</p>
+                <div class="whl-rp__actions"><span>↑ 25 ↓</span><span>💬 14</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--purple"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 2d ago</small></div><div class="whl-rp__user">InkCredibleMom</div></div></header>
+                <h4 class="whl-rp__title">Cancelling without a call</h4>
+                <span class="whl-rp__tag whl-rp__tag--mobility">Mobility</span>
+                <p class="whl-rp__body">I do not want to have a phone call with loyalty! Sent back the device, didn't port my number, have a new provider. Cancel my contract through chat — why is this so complicated?</p>
+                <div class="whl-rp__actions"><span>↑ 4 ↓</span><span>💬 7</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/telus <small>· 3d ago</small></div><div class="whl-rp__user">RecordingStill6702</div></div></header>
+                <h4 class="whl-rp__title">Quick to get my money and slow to fix their mistakes</h4>
+                <span class="whl-rp__tag whl-rp__tag--support">Support</span>
+                <p class="whl-rp__body">Switching from Shaw to Telus. Asked for 1.5gb internet only. Got the order summary — TV, internet AND home phone, none of which I agreed to. Support's brave enough to ask if I want to keep it.</p>
+                <div class="whl-rp__actions"><span>↑ 3 ↓</span><span>💬 11</span><span>Share</span></div>
+              </article>
+              <article class="whl-rp__post" aria-hidden="true">
+                <header class="whl-rp__head"><span class="whl-rp__avatar whl-rp__avatar--green"></span><div class="whl-rp__meta"><div class="whl-rp__sub">r/Bell <small>· 1h ago</small></div><div class="whl-rp__user">Key-Lifeguard-5540</div></div></header>
+                <h4 class="whl-rp__title">I'm done with bell, changing providers asap</h4>
+                <span class="whl-rp__tag whl-rp__tag--rant">Rant</span>
+                <p class="whl-rp__body">Connection around Brampton is totally unstable and they keep raising the price of my plan. They only offer 1 plan if you have your own phone — way too much data, way too expensive.</p>
+                <div class="whl-rp__actions"><span>↑ 2 ↓</span><span>💬 2</span><span>Share</span></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- the two cards that move to the right -->
+      <div class="whl-pright">
+        <div class="whl-pcard whl-reveal">
+          <div class="whl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef5530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
+          <h3>Your bill crept up, and you never noticed.</h3>
+          <p>The promo ends, the price quietly jumps, and your neighbour pays half of what you do for the same line.</p>
+          <div class="whl-stat"><b>$20–40<span style="font-size:18px">/mo</span></b><span>the typical jump once your promo ends</span></div>
+        </div>
+        <div class="whl-pcard whl-reveal">
+          <div class="whl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef5530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>The yearly call to “retention.”</h3>
+          <p>Threatening to leave just to claw back a fair price. Every year. We do it for you instead, as a group.</p>
+          <div class="whl-stat"><b>Every 1–2 yrs</b><span>how often you must do this just to hold a fair price</span></div>
+        </div>
+      </div>
+    </div>
     <div class="whl-pgrid">
-      <div class="whl-pcard whl-reveal">
-        <div class="whl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef5530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></div>
-        <h3>Your bill crept up, and you never noticed.</h3>
-        <p>The promo ends, the price quietly jumps, and your neighbour pays half of what you do for the same line.</p>
-        <div class="whl-stat"><b>$20–40<span style="font-size:18px">/mo</span></b><span>the typical jump once your promo ends</span></div>
-      </div>
-      <div class="whl-pcard whl-reveal">
-        <div class="whl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef5530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <h3>The yearly call to “retention.”</h3>
-        <p>Threatening to leave just to claw back a fair price. Every year. We do it for you instead, as a group.</p>
-        <div class="whl-stat"><b>Every 1–2 yrs</b><span>how often you must do this just to hold a fair price</span></div>
-      </div>
       <div class="whl-pcard whl-reveal">
         <div class="whl-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef5530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.58 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
         <h3>When the network goes down, everything stops.</h3>
